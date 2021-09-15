@@ -9,7 +9,7 @@ set :application, 'projHN'
 set :repo_url, 'git@github.com:thineikhaing/projHN.git'
 set :deploy_to, '/home/ubuntu/projHN'
 set :use_sudo, true
-set :branch, 'master'
+set :branch, ENV['BRANCH'] if ENV['BRANCH']
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 set :linked_files, %w{config/master.key}
 

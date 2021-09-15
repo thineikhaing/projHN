@@ -1,3 +1,10 @@
+server '18.139.0.111', user: 'ubuntu', roles: %w{web app db}
+set :ssh_options, { 
+  forward_agent: true, 
+  auth_methods: %w[publickey],
+  keys: %w[/Users/thinei/server-keys/awsec2-key-pair.pem]
+}
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
